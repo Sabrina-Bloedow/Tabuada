@@ -1,15 +1,16 @@
-function verificar() { 
+function calcular() { 
     var n = parseInt(document.getElementById('txtnum').value)
-    var res = document.getElementById('res') 
+    var tab = document.getElementById('seltab') 
 
     if (isNaN(n)) {
         alert('insira um número!')
     } else {
-        res.innerHTML = 'calculando...<br>'
-
+        tab.innerHTML = ''
         for(var i = 0; i <= 10; i++) {
-            cal = i * n
-            res.innerHTML += `${i} x ${n} = ${cal}<br>`
+            let item = document.createElement('option')
+            item.text = `${i} x ${n} = ${i * n}`
+            item.value = `tab${i}`
+            tab.appendChild(item)
         }
     }
  }
